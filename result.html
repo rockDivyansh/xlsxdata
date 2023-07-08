@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joined Data</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Joined Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% joinedData.forEach(function(row) { %>
+        <tr>
+          <td><%= row.Name %></td>
+          <td><%= row.Address %></td>
+          <td><%= row.Phone %></td>
+          <td><%= row.City %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <br>
+  <a href="/download?joinedData=<%= encodeURIComponent(JSON.stringify(joinedData)) %>">Download Joined Data</a>
+</body>
+</html>
